@@ -806,11 +806,6 @@
             <img src="https://i.ibb.co/7d2NgNdG/ohnepixelgivemeyourfeets.png" alt="BHOP Logo" class="token-logo" />
             <div class="token-details">
                 <h2 class="token-name">BHOP</h2>
-                <div class="token-ticker">Ticker: <span>BHOP</span></div>
-                <div class="token-ca">Contract Address (Solana):<br>
-                    <span class="token-ca-value" id="contractAddress" style="cursor:pointer;position:relative;user-select:all;">So11111111111111111111111111111111111111112</span>
-                    <span id="copySuccess" style="display:none;margin-left:0.5em;color:#14F195;font-size:1.1em;vertical-align:middle;">✔️ Copié !</span>
-                </div>
             </div>
         </div>
     </div>
@@ -886,8 +881,6 @@
             <h3>BHOP MEME CONTEST</h3>
             <p>Create the most legendary BHOP meme and win big!</p>
             <div class="prize">🏆 Prize: $200 or your favorite Counter-Strike skin worth $200</div>
-            <div style="font-size:1.1rem;color:#FFD700;font-weight:bold;margin-bottom:0.5rem;letter-spacing:1px;">The contest is ending 5 JUNE 21:30 UTC</div>
-            <div class="countdown" id="countdown">Loading...</div>
             <div style="font-size:1.1rem;color:#14F195;font-weight:bold;margin:1rem 0;letter-spacing:1px;">Join our Telegram to know the results!</div>
             <p style="margin-bottom:2rem;">Post your meme on Twitter with these hashtags. The meme with the most likes wins!</p>
             <div class="contest-rules">
@@ -1009,36 +1002,6 @@
             const gaben = new Audio('./sounds/gaben.mp3');
             gaben.play();
         });
-
-        // Countdown timer
-        function updateCountdown() {
-            // Date cible : 5 juin 2024, 21:30 UTC
-            const endDate = new Date(Date.UTC(2024, 5, 5, 21, 30, 0));
-
-            function update() {
-                const now = new Date();
-                const diff = endDate - now;
-
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-                document.getElementById('countdown').innerHTML = 
-                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-                if (diff <= 0) {
-                    document.getElementById('countdown').innerHTML = "0d 0h 0m 0s";
-                    clearInterval(timer);
-                }
-            }
-
-            update();
-            const timer = setInterval(update, 1000);
-        }
-
-        // Initialize countdown
-        updateCountdown();
 
         // Copier l'adresse du contrat au clic
         document.getElementById('contractAddress').addEventListener('click', function() {
