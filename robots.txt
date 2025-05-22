@@ -1,0 +1,28 @@
+# BHOP Token - Robots.txt
+# English version
+User-agent: *
+Allow: /
+Allow: /banner
+Allow: /sitemap.xml
+
+# Block sensitive directories
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+
+# Sitemap location
+Sitemap: https://bhopcoin.github.io/sitemap.xml
+
+# SEO Keywords for BHOP Token
+# BHOP on Solana
+# CSGO crypto
+# CSGO memecoin
+# Counter Strike memecoin
+# BHOP memecoin
+# BHOP Telegram: t.me/+ksj_R6l7dUI2MjFk
+
+# Russian version / Русская версия
+# Блокировка чувствительных директорий
+# Расположение карты сайта
+# Ключевые слова для SEO
+# BHOP Telegram: t.me/+ksj_R6l7dUI2MjFk 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Main page / Главная страница -->
+    <url>
+        <loc>https://bhopcoin.github.io/</loc>
+        <lastmod>2024-03-14</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bhop.sol/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bhop.sol/ru/"/>
+    </url>
+
+    <!-- Banner page / Страница баннера -->
+    <url>
+        <loc>https://bhop.sol/banner</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bhop.sol/banner"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bhop.sol/ru/banner"/>
+    </url>
+
+    <!-- Meta descriptions for SEO / Мета-описания для SEO -->
+    <url>
+        <loc>https://bhop.sol/meta</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <!-- English version -->
+        <meta>
+            <title>BHOP Token - The Ultimate CSGO Memecoin on Solana</title>
+            <description>BHOP Token: The first Counter-Strike inspired memecoin on Solana. Join the CSGO crypto revolution with BHOP, the ultimate gaming memecoin. Experience the fastest token on the fastest chain. Join our Telegram community: t.me/+ksj_R6l7dUI2MjFk</description>
+            <keywords>BHOP TOKEN, BHOP on Solana, CSGO crypto, CSGO memecoin, Counter Strike memecoin, BHOP memecoin, Solana token, gaming crypto, bunny hop token, CSGO token, BHOP Telegram</keywords>
+            <og:title>BHOP Token - The Ultimate CSGO Memecoin</og:title>
+            <og:description>Join the CSGO crypto revolution with BHOP, the first Counter-Strike inspired memecoin on Solana. Join our Telegram: t.me/+ksj_R6l7dUI2MjFk</og:description>
+            <og:type>website</og:type>
+            <og:url>https://bhop.sol</og:url>
+            <og:image>https://bhop.sol/ohnepixelgivemeyourfeets.png</og:image>
+        </meta>
+        
+        <!-- Russian version / Русская версия -->
+        <meta lang="ru">
+            <title>BHOP Token - Лучший CSGO Мемкоин на Solana</title>
+            <description>BHOP Token: Первый мемкоин, вдохновленный Counter-Strike на Solana. Присоединяйтесь к крипто-революции CSGO с BHOP, лучшим игровым мемкоином. Испытайте самый быстрый токен на самой быстрой сети. Присоединяйтесь к нашему Telegram: t.me/+ksj_R6l7dUI2MjFk</description>
+            <keywords>BHOP TOKEN, BHOP на Solana, CSGO крипто, CSGO мемкоин, Counter Strike мемкоин, BHOP мемкоин, Solana токен, игровая криптовалюта, токен бани-хопа, CSGO токен, BHOP Telegram</keywords>
+            <og:title>BHOP Token - Лучший CSGO Мемкоин</og:title>
+            <og:description>Присоединяйтесь к крипто-революции CSGO с BHOP, первым мемкоином, вдохновленным Counter-Strike на Solana. Присоединяйтесь к нашему Telegram: t.me/+ksj_R6l7dUI2MjFk</og:description>
+            <og:type>website</og:type>
+            <og:url>https://bhop.sol/ru</og:url>
+            <og:image>https://bhop.sol/ohnepixelgivemeyourfeets.png</og:image>
+        </meta>
+    </url>
+</urlset> 

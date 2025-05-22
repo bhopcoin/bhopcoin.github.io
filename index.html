@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags SEO -->
+    <meta name="description" content="BHOP Token: The first Counter-Strike inspired memecoin on Solana. Join the CSGO crypto revolution with BHOP, the ultimate gaming memecoin.">
+    <meta name="keywords" content="BHOP TOKEN, BHOP on Solana, CSGO crypto, CSGO memecoin, Counter Strike memecoin, BHOP memecoin, Solana token, gaming crypto">
+    <meta name="author" content="BHOP Token">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="BHOP Token - The Ultimate CSGO Memecoin on Solana">
+    <meta property="og:description" content="Join the CSGO crypto revolution with BHOP, the first Counter-Strike inspired memecoin on Solana.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="./">
+    <meta property="og:image" content="https://i.ibb.co/7d2NgNdG/ohnepixelgivemeyourfeets.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BHOP Token - The Ultimate CSGO Memecoin">
+    <meta name="twitter:description" content="The first Counter-Strike inspired memecoin on Solana. Join the CSGO crypto revolution!">
+    <meta name="twitter:image" content="https://i.ibb.co/7d2NgNdG/ohnepixelgivemeyourfeets.png">
+    <title>$BHOP - The Bunny Hop Token</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/7d2NgNdG/ohnepixelgivemeyourfeets.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        :root {
+            --bg-color: #0B0B0B;
+            --text-color: #DDDDDD;
+            --solana-green: #14F195;
+            --pump-yellow: #FFD700;
+            --accent-red: #FF4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2" fill="white" stroke="black" stroke-width="1"/></svg>') 12 12, auto;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Orbitron', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 3.2rem;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://i.ibb.co/r2rtPFn0/knhza2p4c5ta1-1-1308825866.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .title {
+            font-size: 4rem;
+            color: var(--solana-green);
+            text-shadow: 0 0 10px var(--solana-green);
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--pump-yellow);
+            margin-bottom: 2rem;
+        }
+
+        .console-text {
+            font-family: monospace;
+            color: var(--solana-green);
+            margin: 1rem 0;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        .button {
+            background: rgba(0,0,0,0.8);
+            border: 2px solid var(--solana-green);
+            color: var(--solana-green);
+            padding: 1rem 2rem;
+            margin: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button:hover {
+            background: var(--solana-green);
+            color: var(--bg-color);
+            transform: scale(1.05);
+        }
+
+        .button::before {
+            content: '▶';
+            margin-right: 0.5rem;
+        }
+
+        .audio-player {
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 1rem;
+            border: 1px solid var(--solana-green);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            animation: highlight 2s ease-in-out;
+            max-width: 300px;
+        }
+
+        .audio-player .button {
+            animation: pulse 2s infinite;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--solana-green);
+        }
+
+        .volume-control input {
+            width: 100px;
+            accent-color: var(--solana-green);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes highlight {
+            0% { box-shadow: 0 0 20px var(--solana-green); }
+            100% { box-shadow: 0 0 0 var(--solana-green); }
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            background: rgba(0,0,0,0.9);
+            margin: 2rem 0;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 1;
+        }
+
+        .section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .mission-briefing {
+            background: rgba(20,20,20,0.95);
+            border: 2px solid var(--solana-green);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .stats-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            background: rgba(0,0,0,0.8);
+            border: 1px solid var(--solana-green);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid var(--pump-yellow);
+        }
+
+        .rules-list {
+            list-style: none;
+            padding: 2rem;
+        }
+
+        .rules-list li {
+            margin: 1rem 0;
+            padding: 0.5rem;
+            border-left: 3px solid var(--solana-green);
+        }
+
+        .meme-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            background: rgba(0,0,0,0.8);
+            border: 1px solid var(--solana-green);
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .contest-info {
+            background: rgba(0,0,0,0.9);
+            border: 2px solid var(--pump-yellow);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .countdown {
+            font-size: 2rem;
+            color: var(--pump-yellow);
+            margin: 1rem 0;
+            text-shadow: 0 0 10px var(--pump-yellow);
+        }
+
+        .prize {
+            color: var(--solana-green);
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .hashtags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .hashtag {
+            background: rgba(20, 241, 149, 0.1);
+            border: 1px solid var(--solana-green);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: var(--solana-green);
+            font-size: 0.9rem;
+        }
+
+        .submit-button {
+            background: linear-gradient(45deg, var(--solana-green), var(--pump-yellow));
+            color: var(--bg-color);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-top: 1rem;
+            margin-left: 1rem;
+        }
+
+        .submit-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--solana-green);
+        }
+
+        .meme-item {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid var(--pump-yellow);
+            border-radius: 5px;
+            padding: 0.5rem;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .meme-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px var(--solana-green);
+        }
+
+        .meme-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+        }
+
+        footer {
+            background: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98));
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 2px solid var(--solana-green);
+            position: relative;
+            margin-top: 4rem;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--solana-green), transparent);
+        }
+
+        footer p {
+            max-width: 800px;
+            margin: 1rem auto;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .footer-links .button {
+            min-width: 120px;
+            background: rgba(20, 241, 149, 0.1);
+            border: 1px solid var(--solana-green);
+            transition: all 0.3s ease;
+        }
+
+        .footer-links .button:hover {
+            background: var(--solana-green);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(20, 241, 149, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .audio-player {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin: 1.5rem auto 0 auto;
+                width: 90%;
+                max-width: none;
+            }
+
+            .title {
+                font-size: 2.5rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .button {
+                width: 90%;
+                margin: 0.5rem auto;
+            }
+            .section {
+                padding: 2rem 1rem;
+                margin: 1rem 0;
+            }
+            .mission-briefing {
+                padding: 1rem;
+                margin: 1rem auto;
+            }
+            .stats-board {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            .meme-gallery {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            .rules-list {
+                padding: 1rem;
+            }
+            .rules-list li {
+                margin: 0.5rem 0;
+            }
+            footer {
+                padding: 2rem 1rem;
+            }
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .footer-links .button {
+                width: 200px;
+                margin: 0.25rem 0;
+            }
+            .contest-info {
+                padding: 1rem;
+                margin: 1rem;
+            }
+            .countdown {
+                font-size: 1.5rem;
+            }
+            .prize {
+                font-size: 1.2rem;
+            }
+            .hashtag {
+                font-size: 0.8rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .contest-rules {
+            background: rgba(20,20,20,0.95);
+            border: 1px solid var(--solana-green);
+            border-radius: 8px;
+            color: var(--text-color);
+            text-align: center;
+            margin: 2.5rem auto 2.5rem auto;
+            max-width: 600px;
+            padding: 2rem 2.5rem 2.5rem 2.5rem;
+            font-size: 1.1rem;
+            box-shadow: 0 0 10px rgba(20,241,149,0.1);
+        }
+        .contest-rules h4 {
+            color: var(--solana-green);
+            margin-bottom: 0.7rem;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+        .contest-rules ul {
+            display: inline-block;
+            text-align: left;
+            padding-left: 0;
+            margin: 0 auto;
+        }
+        .contest-rules li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+        .contest-rules .hashtags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+        .contest-rules .hashtag {
+            min-width: 120px;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .contest-rules .hashtags {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.7rem;
+            }
+            .contest-rules .hashtag {
+                width: 90vw;
+                min-width: unset;
+                max-width: 300px;
+            }
+            .submit-button {
+                width: 95vw;
+                max-width: 350px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+        }
+
+        .topbar-solana {
+            width: 100vw;
+            background: linear-gradient(90deg, #14F195 0%, #FFD700 100%);
+            color: #0B0B0B;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 0.7rem 0.5rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2000;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 10px rgba(20,241,149,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .topbar-solana:hover {
+            background: linear-gradient(90deg, #FFD700 0%, #14F195 100%);
+            transform: translateY(2px);
+        }
+
+        .pump-logo {
+            height: 32px;
+            width: auto;
+            animation: blink 2s infinite;
+            margin-right: 12px;
+            vertical-align: middle;
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+        }
+
+        .fomo-text {
+            font-weight: 900;
+            animation: fomo-pulse 1.5s infinite;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            margin-left: 8px;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fomo-pulse {
+            0% { color: var(--solana-green); }
+            50% { color: var(--pump-yellow); }
+            100% { color: var(--solana-green); }
+        }
+
+        .token-info-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 0 2rem 0;
+            background: linear-gradient(90deg, rgba(20,241,149,0.07) 0%, rgba(255,215,0,0.04) 100%);
+        }
+        .token-info-card {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            background: rgba(0,0,0,0.92);
+            border: 2px solid var(--solana-green);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(20,241,149,0.08);
+            padding: 2rem 3rem;
+            max-width: 600px;
+        }
+        .token-logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid var(--pump-yellow);
+            box-shadow: 0 2px 12px rgba(20,241,149,0.12);
+        }
+        .token-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .token-name {
+            color: var(--solana-green);
+            font-size: 2.2rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        .token-ticker {
+            color: var(--pump-yellow);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .token-ticker span {
+            color: var(--solana-green);
+        }
+        .token-ca {
+            color: var(--text-color);
+            font-size: 1.05rem;
+            margin-top: 0.3rem;
+        }
+        .token-ca-value {
+            font-family: monospace;
+            color: var(--solana-green);
+            font-size: 1rem;
+            word-break: break-all;
+            background: rgba(20,241,149,0.08);
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 0.2rem;
+        }
+        @media (max-width: 700px) {
+            .token-info-card {
+                flex-direction: column;
+                gap: 1.2rem;
+                padding: 1.2rem 1rem;
+            }
+            .token-logo {
+                width: 70px;
+                height: 70px;
+            }
+            .token-name {
+                font-size: 1.5rem;
+            }
+        }
+
+        .bhop-story {
+            margin: 2.5rem auto 0 auto;
+            max-width: 700px;
+            background: rgba(20,20,20,0.93);
+            border: 1.5px solid var(--pump-yellow);
+            border-radius: 10px;
+            padding: 1.5rem 2rem;
+            color: var(--text-color);
+            box-shadow: 0 2px 12px rgba(255,215,0,0.07);
+        }
+        .bhop-story h3 {
+            color: var(--pump-yellow);
+            margin-bottom: 0.7rem;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+        .bhop-story p {
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+
+        .bhop-story-block {
+            display: none;
+        }
+        .bhop-story-block.active {
+            display: block;
+        }
+
+        .skins-giveaway-section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 0 3rem 0;
+            min-height: 420px;
+            overflow: hidden;
+        }
+        .skins-giveaway-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)), url('https://i.ibb.co/fspzSFw/skins.png') center/cover;
+            z-index: 0;
+        }
+        .skins-giveaway-card {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(0,0,0,0.93);
+            border: 2px solid var(--pump-yellow);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(255,215,0,0.08);
+            padding: 2.5rem 2.5rem;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .skins-giveaway-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .skins-giveaway-content h2 {
+            color: var(--pump-yellow);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .skins-giveaway-content p {
+            color: var(--text-color);
+            font-size: 1.15rem;
+        }
+        .skins-giveaway-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .skins-giveaway-buttons .button {
+            min-width: 120px;
+            background: rgba(20, 241, 149, 0.1);
+            border: 1px solid var(--solana-green);
+            color: var(--solana-green);
+            font-weight: bold;
+        }
+        .skins-giveaway-buttons .button:hover {
+            background: var(--solana-green);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--pump-yellow);
+        }
+        @media (max-width: 900px) {
+            .skins-giveaway-card {
+                max-width: 95vw;
+            }
+        }
+        .skins-giveaway-logo {
+            width: 110px;
+            height: auto;
+            margin: 0 auto 1.2rem auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(20,241,149,0.18);
+            border: 2px solid var(--solana-green);
+            background: #fff;
+        }
+
+        /* Language blocks - simplified */
+        .en-block {
+            display: block !important;
+        }
+
+        /* Remove Russian blocks */
+        .ru-block {
+            display: none !important;
+        }
+
+        /* Language selector */
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2001;
+            display: flex;
+            gap: 10px;
+            background: rgba(0,0,0,0.8);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid var(--solana-green);
+        }
+        
+        .language-selector button {
+            background: transparent;
+            border: 1px solid var(--solana-green);
+            color: var(--text-color);
+            padding: 5px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .language-selector button.active {
+            background: var(--solana-green);
+            color: var(--bg-color);
+        }
+
+        .meme-submit-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.7rem;
+            margin-top: 2rem;
+        }
+        .meme-submit-row .meme-helper-link {
+            margin-bottom: 0;
+            min-width: unset;
+            text-align: center;
+        }
+        .meme-submit-row .submit-button {
+            margin-left: 0;
+            margin-top: 0;
+            white-space: nowrap;
+            width: auto;
+            max-width: 350px;
+            display: block;
+        }
+
+        .story-title {
+            color: var(--pump-yellow);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <button onclick="changeLanguage('en')" class="active">EN</button>
+    </div>
+    <div class="topbar-solana" onclick="window.open('https://pump.fun/', '_blank')">
+        <img src="https://i.ibb.co/WN8VNXt7/Pump-Fun-Logo-500x281-2771152513.png" alt="Pump.fun" class="pump-logo">
+        <span>Now live on pump.fun</span>
+    </div>
+    <div class="hero">
+        <h1 class="title">$BHOP</h1>
+        <p class="subtitle">Don't walk. Don't run. Just BHOP.</p>
+        <div class="console-text">>> Connecting to bhop_sky... Skill issue detected.</div>
+        <div class="buttons">
+            <button class="button" onclick="window.open('https://pump.fun/', '_blank')">Buy now on pump.fun</button>
+            <button class="button" onclick="window.open('https://t.me/+99n_ueb3uKg3M2Y0', '_blank')">Join our Telegram</button>
+        </div>
+        <br><br>
+        <div class="token-info-card">
+            <img src="https://i.ibb.co/7d2NgNdG/ohnepixelgivemeyourfeets.png" alt="BHOP Logo" class="token-logo" />
+            <div class="token-details">
+                <h2 class="token-name">BHOP</h2>
+                <div class="token-ticker">Ticker: <span>BHOP</span></div>
+                <div class="token-ca">Contract Address (Solana):<br>
+                    <span class="token-ca-value" id="contractAddress" style="cursor:pointer;position:relative;user-select:all;">So11111111111111111111111111111111111111112</span>
+                    <span id="copySuccess" style="display:none;margin-left:0.5em;color:#14F195;font-size:1.1em;vertical-align:middle;">✔️ Copié !</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="audio-player">
+        <audio id="bhopSong" loop>
+            <source src="https://h.uguu.se/ffYxyjOb.mp3" type="audio/mpeg">
+        </audio>
+        <button onclick="toggleAudio()" class="button">Play BHOP SONG</button>
+        <div class="volume-control">
+            <span>🔉</span>
+            <input type="range" min="0" max="1" step="0.1" value="0.4" oninput="adjustVolume(this.value)">
+        </div>
+    </div>
+
+    <section class="section" style="background: linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)), url('https://i.ibb.co/v4HPxvTG/pimp.png') center/cover; background-attachment: fixed;">
+        <div class="mission-briefing">
+            <h2>What is $BHOP?</h2>
+            <p>$BHOP is the fastest coin on the fastest chain. Inspired by the gods of movement in CS, $BHOP is a memecoin tribute to bunny hopping, surfing, and scroll-wheel spamming. It's speed. It's chaos. It's 0% utility and 100% momentum.</p>
+            <blockquote>Mint $BHOP. Miss the top. Rebuy at the peak. Classic.</blockquote>
+            <div class="bhop-story">
+                <h3 class="story-title en-block active">🐇 The Origin of Bunny Hopping</h3>
+                <h3 class="story-title ru-block">🐇 История Bunny Hopping</h3>
+                <div class="bhop-story-block en-block active">
+                    <p>Bunny hopping, or <em>bhop</em>, originated in the mid-1990s with <strong>Quake</strong>, where players discovered a movement glitch that allowed them to gain speed by combining jumps with strafing and mouse movements. One of the <strong>first bhop videos</strong> to explain and showcase the technique featured the player <strong>Zalon</strong> and the voice of <strong>Phil</strong>, becoming a foundational piece for trickjumping culture.</p>
+                    <p>📼 You can still watch it here:<br>
+                    <a href="https://www.youtube.com/watch?v=USxzX8IVqWA" target="_blank" style="color:#14F195;font-weight:bold;text-decoration:underline;">Quake Mega TF - Bunnyhop Map (12/08/2001)</a></p>
+                    <p>As the technique spread, bhop became more than just a movement exploit—it turned into a subculture. With custom maps, KZ climbs, and surf challenges, it gained its own codes and aesthetics. One crucial element was the <strong>music</strong>: fast-paced <strong>drum &amp; bass</strong> and <strong>breakcore</strong> tracks became the soul of bhop montages, matching the speed and rhythm of the jumps. These tracks were not just background—they became legendary in their own right.</p>
+                    <p>🎧 For a deep dive into the history of bhopping, check out this excellent documentary:<br>
+                    <a href="https://www.youtube.com/watch?v=HjKENNGIa6M" target="_blank" style="color:#FFD700;font-weight:bold;text-decoration:underline;">The History of Bunnyhopping – by Valve Guide</a></p>
+                    <p>Today, $BHOP is more than a memecoin. It's a tribute to this digital dance of skill, flow, and legacy—always one jump ahead.</p>
+                </div>
+                <div class="bhop-story-block ru-block">
+                    <p>Bunny hopping, или <em>bhop</em>, зародился в середине 1990-х годов в игре <strong>Quake</strong>, когда игроки обнаружили глюк в движении, позволяющий набирать скорость, комбинируя прыжки со стрейфами и движениями мыши. Один из <strong>первых видеороликов о bhop</strong>, объясняющий и демонстрирующий технику, был создан игроком <strong>Zalon</strong> с голосом <strong>Phil</strong>, став основополагающим для культуры трикджампинга.</p>
+                    <p>📼 Вы все еще можете посмотреть его здесь:<br>
+                    <a href="https://www.youtube.com/watch?v=USxzX8IVqWA" target="_blank" style="color:#14F195;font-weight:bold;text-decoration:underline;">Quake Mega TF - Bunnyhop Map (12/08/2001)</a></p>
+                    <p>По мере распространения техники, bhop стал больше, чем просто эксплойт движения — он превратился в субкультуру. С появлением кастомных карт, KZ-подъемов и surf-испытаний, он обрел собственные коды и эстетику. Одним из ключевых элементов была <strong>музыка</strong>: быстрые треки в стиле <strong>drum &amp; bass</strong> и <strong>breakcore</strong> стали душой bhop-монтажей, соответствуя скорости и ритму прыжков.</p>
+                    <p>🎧 Для глубокого погружения в историю бхопа посмотрите этот отличный документальный фильм:<br>
+                    <a href="https://www.youtube.com/watch?v=HjKENNGIa6M" target="_blank" style="color:#FFD700;font-weight:bold;text-decoration:underline;">История Bunnyhopping – от Valve Guide</a></p>
+                    <p>Сегодня $BHOP — это больше, чем мемкоин. Это дань уважения этому цифровому танцу мастерства, потока и наследия — всегда на один прыжок впереди.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-image: url('https://i.ibb.co/4wsYkb2s/image.png');">
+        <h2>Join the Movement</h2>
+        <p>Our community is where legends hop. From NFT skin drops to exclusive frag battles, the $BHOP ecosystem is more than a token — it's a movement protocol. Join the movement, or get rekt standing still.</p>
+        <div class="buttons">
+            <button class="button" onclick="window.open('https://t.me/+99n_ueb3uKg3M2Y0', '_blank')">Telegram</button>
+            <button class="button" onclick="window.open('https://twitter.com/bhop_sol', '_blank')">Twitter</button>
+        </div>
+    </section>
+
+    <section class="section" style="background-image: url('https://i.ibb.co/TMbtcMkP/for.png');">
+        <h2>BHOP SERVER RULES (updated 2025)</h2>
+        <ul class="rules-list">
+            <li>Don't insult (optional)</li>
+            <li>Don't team kill (optional)</li>
+            <li>Don't be respectful (mandatory)</li>
+            <li>No bunny hop scripts (unless it pumps)</li>
+            <li>Mint before you flame</li>
+            <li>Smoke mid every round, even if solo</li>
+            <li>Rush B when in doubt</li>
+            <li>If you're not surfing, you're already falling</li>
+        </ul>
+        <p>Violation of rules may result in getting flashbanged IRL.</p>
+    </section>
+
+    <section class="section" style="background-image: url('https://i.ibb.co/F4PkX0CP/csgo-dust-2-1712310342.jpg');">
+        <h2>Hall of Hops</h2>
+        <div class="contest-info">
+            <h3>BHOP MEME CONTEST</h3>
+            <p>Create the most legendary BHOP meme and win big!</p>
+            <div class="prize">🏆 Prize: $200 or your favorite Counter-Strike skin worth $200</div>
+            <div style="font-size:1.1rem;color:#FFD700;font-weight:bold;margin-bottom:0.5rem;letter-spacing:1px;">The contest is ending 5 JUNE 21:30 UTC</div>
+            <div class="countdown" id="countdown">Loading...</div>
+            <div style="font-size:1.1rem;color:#14F195;font-weight:bold;margin:1rem 0;letter-spacing:1px;">Join our Telegram to know the results!</div>
+            <p style="margin-bottom:2rem;">Post your meme on Twitter with these hashtags. The meme with the most likes wins!</p>
+            <div class="contest-rules">
+                <h4>Contest Rules</h4>
+                <ul>
+                    <li>Your meme must be <strong>funny</strong>.</li>
+                    <li>Your meme must be <strong>original</strong> (not copied or taken from the internet).</li>
+                    <li>Your meme must include <strong>all</strong> of the following hashtags:<br>
+                        <span class="hashtags">
+                            <span class="hashtag">#SolanaToken</span>
+                            <span class="hashtag">#PumpFun</span>
+                            <span class="hashtag">#bhopcoin</span>
+                            <span class="hashtag">#bhopmemetoken</span>
+                            <span class="hashtag">#Soltrendings</span>
+                        </span><br>
+                    </li>
+                    <li>Your Twitter account must be at least <strong>1 month old</strong> and have at least <strong>10 real followers</strong> (no bots).</li>
+                </ul>
+            </div>
+            <div class="meme-submit-row">
+                <a href="https://imgflip.com/" target="_blank" class="meme-helper-link" style="font-size:1.05rem;color:#14F195;font-weight:bold;text-decoration:underline;">If you don't know how to make memes, go there comrade: imgflip.com</a>
+                <a href="https://twitter.com/intent/tweet?text=Check%20out%20my%20BHOP%20meme!%20%40bhop_sol%20%23SolanaToken%20%23PumpFun%20%23bhopcoin%20%23bhopmemetoken%20%23Soltrendings" target="_blank" class="submit-button">Submit Your Meme on Twitter</a>
+            </div>
+        </div>
+        <div class="meme-gallery">
+        </div>
+    </section>
+
+    <section class="section skins-giveaway-section" style="background: linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)), url('https://i.ibb.co/fspzSFw/skins.png') center/cover; background-attachment: fixed;">
+        <div class="skins-giveaway-card">
+            <div class="skins-giveaway-content">
+                <img src="https://i.ibb.co/PG7Ch7Hb/zd.png" alt="Giveaway" class="skins-giveaway-logo" />
+                <h2>Skins & Giveaways</h2>
+                <p>Join our <b>Telegram</b> and follow our <b>Twitter</b> to win skins and money&nbsp;!</p>
+                <div class="skins-giveaway-buttons">
+                    <a href="https://t.me/+99n_ueb3uKg3M2Y0" class="button">Telegram</a>
+                    <a href="https://twitter.com/bhop_sol" class="button">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>$BHOP - The Ultimate Movement Token</p>
+        <div class="footer-links">
+            <a href="https://pump.fun/" class="button">pump.fun</a>
+            <a href="https://twitter.com/bhop_sol" class="button">Twitter/X</a>
+            <a href="https://t.me/+99n_ueb3uKg3M2Y0" class="button">Telegram</a>
+        </div>
+        <div class="footer-contact" style="margin-top:2rem;font-size:1.08rem;color:#FFD700;display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+            <span style="font-size:1.2em;">✉️</span>
+            <a href="mailto:contact.bhop@proton.me" style="color:#FFD700;text-decoration:underline;font-weight:bold;">contact.bhop@proton.me</a>
+        </div>
+    </footer>
+
+    <script>
+        // Audio player functionality
+        const audio = document.getElementById('bhopSong');
+        let isPlaying = false;
+        
+        // Set initial volume to 40%
+        audio.volume = 0.4;
+        
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                document.querySelector('.audio-player .button').textContent = 'Play BHOP SONG';
+            } else {
+                audio.play();
+                document.querySelector('.audio-player .button').textContent = 'Pause BHOP SONG';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        function adjustVolume(value) {
+            audio.volume = parseFloat(value);
+            const volumeIcon = document.querySelector('.volume-control span');
+            if (value == 0) {
+                volumeIcon.textContent = '🔇';
+            } else if (value < 0.3) {
+                volumeIcon.textContent = '🔈';
+            } else if (value < 0.7) {
+                volumeIcon.textContent = '🔉';
+            } else {
+                volumeIcon.textContent = '🔊';
+            }
+        }
+
+        // Konami code implementation
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'h', 'o', 'p'];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    // Trigger easter egg
+                    const headshot = new Audio('./sounds/headshot.wav');
+                    headshot.play();
+                    alert('You found the sacred scroll wheel!');
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        // Console message on load
+        console.log('Welcome to $BHOP – Movement detected.');
+
+        // Flashbang sound on logo click
+        document.querySelector('.title').addEventListener('click', () => {
+            const flashbang = new Audio('./sounds/flashbang.wav');
+            flashbang.play();
+        });
+
+        // Gaben voice line on rules hover
+        document.querySelector('h2').addEventListener('mouseover', () => {
+            const gaben = new Audio('./sounds/gaben.mp3');
+            gaben.play();
+        });
+
+        // Countdown timer
+        function updateCountdown() {
+            // Date cible : 5 juin 2024, 21:30 UTC
+            const endDate = new Date(Date.UTC(2024, 5, 5, 21, 30, 0));
+
+            function update() {
+                const now = new Date();
+                const diff = endDate - now;
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown').innerHTML = 
+                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                if (diff <= 0) {
+                    document.getElementById('countdown').innerHTML = "0d 0h 0m 0s";
+                    clearInterval(timer);
+                }
+            }
+
+            update();
+            const timer = setInterval(update, 1000);
+        }
+
+        // Initialize countdown
+        updateCountdown();
+
+        // Copier l'adresse du contrat au clic
+        document.getElementById('contractAddress').addEventListener('click', function() {
+            const address = this.textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                const msg = document.getElementById('copySuccess');
+                msg.style.display = 'inline';
+                setTimeout(() => { msg.style.display = 'none'; }, 1500);
+            });
+        });
+
+        // Language translations
+        const translations = {
+            en: {
+                title: "$BHOP",
+                subtitle: "Don't walk. Don't run. Just BHOP.",
+                consoleText: ">> Connecting to bhop_sky... Skill issue detected.",
+                buyNow: "Buy now on pump.fun",
+                joinTelegram: "Join our Telegram",
+                whatIsBhop: "What is $BHOP?",
+                bhopDescription: "$BHOP is the fastest coin on the fastest chain. Inspired by the gods of movement in CS, $BHOP is a memecoin tribute to bunny hopping, surfing, and scroll-wheel spamming. It's speed. It's chaos. It's 0% utility and 100% momentum.",
+                quote: "Mint $BHOP. Miss the top. Rebuy at the peak. Classic.",
+                joinMovement: "Join the Movement",
+                communityText: "Our community is where legends hop. From NFT skin drops to exclusive frag battles, the $BHOP ecosystem is more than a token — it's a movement protocol. Join the movement, or get rekt standing still.",
+                serverRules: "BHOP SERVER RULES (updated 2025)",
+                rulesList: [
+                    "Don't insult (optional)",
+                    "Don't team kill (optional)",
+                    "Don't be respectful (mandatory)",
+                    "No bunny hop scripts (unless it pumps)",
+                    "Mint before you flame",
+                    "Smoke mid every round, even if solo",
+                    "Rush B when in doubt",
+                    "If you're not surfing, you're already falling"
+                ],
+                rulesViolation: "Violation of rules may result in getting flashbanged IRL.",
+                hallOfHops: "Hall of Hops",
+                memeContest: "BHOP MEME CONTEST",
+                createMeme: "Create the most legendary BHOP meme and win big!",
+                prize: "🏆 Prize: $200 or your favorite Counter-Strike skin worth $200",
+                contestEnding: "The contest is ending 5 JUNE 21:30 UTC",
+                postMeme: "Post your meme on Twitter with these hashtags. The meme with the most likes wins!",
+                contestRules: "Contest Rules",
+                rules: [
+                    "Your meme must be <strong>funny</strong>.",
+                    "Your meme must be <strong>original</strong> (not copied or taken from the internet).",
+                    "Your meme must include <strong>all</strong> of the following hashtags:",
+                    "Your Twitter account must be at least <strong>1 month old</strong> and have at least <strong>10 real followers</strong> (no bots)."
+                ],
+                memeHelper: "If you don't know how to make memes, go there comrade: imgflip.com",
+                submitMeme: "Submit Your Meme on Twitter",
+                skinsGiveaway: "Skins & Giveaways",
+                skinsText: "Join our <b>Telegram</b> and follow our <b>Twitter</b> to win skins and money!",
+                footerText: "$BHOP - The Ultimate Movement Token",
+                playSong: "Play BHOP SONG",
+                pauseSong: "Pause BHOP SONG",
+                copied: "✔️ Copied!",
+                buyNowPump: "Buy now on pump.fun",
+                joinTelegramButton: "Join our Telegram",
+                twitterButton: "Twitter/X",
+                pumpFunButton: "pump.fun",
+                telegramButton: "Telegram",
+                contactEmail: "contact.bhop@proton.me",
+                ultimateMovement: "$BHOP - The Ultimate Movement Token",
+                tokenLaunch: "Now live on pump.fun",
+                hashtags: ["#SolanaToken", "#PumpFun", "#bhopcoin", "#bhopmemetoken", "#Soltrendings"],
+                emailContact: "Contact us:",
+                contestResults: "Join our Telegram to know the results!",
+                postMemeHashtags: "Post your meme on Twitter with these hashtags. The meme with the most likes wins!",
+                memeHelperText: "If you don't know how to make memes, go there comrade: imgflip.com",
+                submitMemeTwitter: "Submit Your Meme on Twitter",
+                storyTitle: "🐇 The Origin of Bunny Hopping",
+                storyContent: `<p>Bunny hopping, or <em>bhop</em>, originated in the mid-1990s with <strong>Quake</strong>, where players discovered a movement glitch that allowed them to gain speed by combining jumps with strafing and mouse movements. One of the <strong>first bhop videos</strong> to explain and showcase the technique featured the player <strong>Zalon</strong> and the voice of <strong>Phil</strong>, becoming a foundational piece for trickjumping culture.</p>
+                    <p>📼 You can still watch it here:<br>
+                    <a href="https://www.youtube.com/watch?v=USxzX8IVqWA" target="_blank" style="color:#14F195;font-weight:bold;text-decoration:underline;">Quake Mega TF - Bunnyhop Map (12/08/2001)</a></p>
+                    <p>As the technique spread, bhop became more than just a movement exploit—it turned into a subculture. With custom maps, KZ climbs, and surf challenges, it gained its own codes and aesthetics. One crucial element was the <strong>music</strong>: fast-paced <strong>drum &amp; bass</strong> and <strong>breakcore</strong> tracks became the soul of bhop montages, matching the speed and rhythm of the jumps. These tracks were not just background—they became legendary in their own right.</p>
+                    <p>🎧 For a deep dive into the history of bhopping, check out this excellent documentary:<br>
+                    <a href="https://www.youtube.com/watch?v=HjKENNGIa6M" target="_blank" style="color:#FFD700;font-weight:bold;text-decoration:underline;">The History of Bunnyhopping – by Valve Guide</a></p>
+                    <p>Today, $BHOP is more than a memecoin. It's a tribute to this digital dance of skill, flow, and legacy—always one jump ahead.</p>`
+            }
+        };
+
+        function changeLanguage(lang) {
+            // Simplify the function since we only have English now
+            const t = translations[lang];
+
+            // Update ALL text content
+            document.querySelector('.title').textContent = t.title;
+            document.querySelector('.subtitle').textContent = t.subtitle;
+            document.querySelector('.console-text').textContent = t.consoleText;
+            document.querySelector('.topbar-solana span').textContent = t.tokenLaunch;
+
+            // Update hero section buttons
+            document.querySelectorAll('.hero .buttons .button').forEach((button, index) => {
+                if (index === 0) button.textContent = t.buyNowPump;
+                if (index === 1) button.textContent = t.joinTelegramButton;
+            });
+
+            // Update mission briefing
+            document.querySelector('.mission-briefing h2').textContent = t.whatIsBhop;
+            document.querySelector('.mission-briefing > p').textContent = t.bhopDescription;
+            document.querySelector('.mission-briefing blockquote').textContent = t.quote;
+
+            // Update Join Movement section
+            document.querySelector('.section:nth-of-type(2) h2').textContent = t.joinMovement;
+            document.querySelector('.section:nth-of-type(2) p').textContent = t.communityText;
+
+            // Update Server Rules section
+            document.querySelector('.section:nth-of-type(3) h2').textContent = t.serverRules;
+            const rulesList = document.querySelector('.rules-list');
+            rulesList.innerHTML = t.rulesList.map(rule => `<li>${rule}</li>`).join('');
+            document.querySelector('.section:nth-of-type(3) > p').textContent = t.rulesViolation;
+
+            // Update Contest section
+            document.querySelector('.section:nth-of-type(4) h2').textContent = t.hallOfHops;
+            document.querySelector('.contest-info h3').textContent = t.memeContest;
+            document.querySelector('.contest-info > p').textContent = t.createMeme;
+            document.querySelector('.prize').textContent = t.prize;
+            document.querySelector('.contest-info div[style*="color:#FFD700"]').textContent = t.contestEnding;
+            document.querySelector('.contest-info div[style*="color:#14F195"]').textContent = t.contestResults;
+            document.querySelector('.contest-info p[style*="margin-bottom:2rem"]').textContent = t.postMeme;
+
+            // Update Contest Rules
+            document.querySelector('.contest-rules h4').textContent = t.contestRules;
+            const contestRules = document.querySelector('.contest-rules ul');
+            contestRules.innerHTML = t.rules.map(rule => `<li>${rule}</li>`).join('');
+
+            // Update hashtags
+            const hashtagsContainer = document.querySelector('.contest-rules .hashtags');
+            hashtagsContainer.innerHTML = t.hashtags.map(hashtag => `<span class="hashtag">${hashtag}</span>`).join('');
+
+            // Update Meme Helper and Submit button
+            document.querySelector('.meme-helper-link').textContent = t.memeHelperText;
+            document.querySelector('.submit-button').textContent = t.submitMemeTwitter;
+
+            // Update Skins & Giveaways section
+            document.querySelector('.skins-giveaway-content h2').textContent = t.skinsGiveaway;
+            document.querySelector('.skins-giveaway-content p').innerHTML = t.skinsText;
+
+            // Update Footer
+            document.querySelector('footer p').textContent = t.ultimateMovement;
+            document.querySelectorAll('.footer-links .button').forEach((button, index) => {
+                if (index === 0) button.textContent = t.pumpFunButton;
+                if (index === 1) button.textContent = t.twitterButton;
+                if (index === 2) button.textContent = t.telegramButton;
+            });
+
+            // Update Footer Contact
+            document.querySelector('.footer-contact').innerHTML = `
+                <span style="font-size:1.2em;">✉️</span>
+                <a href="mailto:${t.contactEmail}" style="color:#FFD700;text-decoration:underline;font-weight:bold;">${t.contactEmail}</a>
+            `;
+
+            // Update Audio Player
+            const audioButton = document.querySelector('.audio-player .button');
+            audioButton.textContent = isPlaying ? t.pauseSong : t.playSong;
+
+            // Update Copy Message
+            document.getElementById('copySuccess').textContent = t.copied;
+        }
+    </script>
+</body>
+</html> 
